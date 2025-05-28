@@ -70,14 +70,18 @@ def listarutiles():
     os.system("pause")
 
 def actualizarutil():
-    posicion = int(input(f'digite la posicio que desea actualizar, la posicion  maxima es de {len[utilies]}'))
-    nuevo = input('digite el nuevo util')
-    utilies[posicion-1] = nuevo
+    try:#si hay un rango malo hace que no se rompa todo
+        posicion = int(input(f'digite la posicio que desea actualizar, la posicion  maxima es de {len(utilies)}   '))
+        nuevaCantidad=input("Que cantidad nueva quiere poner?")
+        cantidad[posicion-1]=nuevaCantidad
+        nuevo = input('digite el nuevo util')
+        utilies[posicion-1] = nuevo
+    except: print('posicion no valida')
     print('su nuevo util a sido actualizado ')
     os.system("pause")
 
 def eliminarutil():
-    eliminar = int(input(f' ingrese la posicion del util a eliminar, la posicion  maxima es de {len[utilies]} '))
+    eliminar = int(input(f' ingrese la posicion del util a eliminar, la posicion  maxima es de {len(utilies)} '))
     utilies.pop(eliminar)
     print('su util a sido eliminado ')
     os.system("pause")
